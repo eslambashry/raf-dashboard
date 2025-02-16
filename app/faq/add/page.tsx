@@ -171,7 +171,7 @@ export default function AddFAQ() {
         keywords: state.keywords[lang]
       }
 
-      const response = await fetch("http://localhost:8080/question/create", {
+      const response = await fetch("https://raf-alpha.vercel.app/question/create", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

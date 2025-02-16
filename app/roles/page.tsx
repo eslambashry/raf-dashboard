@@ -64,7 +64,7 @@ function UsersListContent() {
           return;
         }
   
-        const response = await fetch("http://localhost:8080/auth/users", {
+        const response = await fetch("https://raf-alpha.vercel.app/auth/users", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -115,7 +115,7 @@ function UsersListContent() {
     try {
       const token = localStorage.getItem('token')
       await axios.put(
-        `http://localhost:8080/auth/update/${editingUser?._id}`,
+        `https://raf-alpha.vercel.app/auth/update/${editingUser?._id}`,
         data,
         {
           headers: {
@@ -158,7 +158,7 @@ function UsersListContent() {
       try {
         const token = localStorage.getItem('token');
         
-        await axios.delete(`http://localhost:8080/auth/delete/${UserToDelete}`, {
+        await axios.delete(`https://raf-alpha.vercel.app/auth/delete/${UserToDelete}`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'

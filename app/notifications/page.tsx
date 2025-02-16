@@ -50,7 +50,7 @@ export default function NotificationsPage() {
   useEffect(() => {
     fetchData()
 
-    // const socket = io("http://localhost:8080", {
+    // const socket = io("http://localhost:8000", {
     //   reconnection: true,
     //   timeout: 10000
     // })
@@ -67,13 +67,13 @@ export default function NotificationsPage() {
     try {
       const token = localStorage.getItem("token")
       const [emailResponse, interestedResponse,consultaionsResponse] = await Promise.all([
-        fetch("http://localhost:8080/newsletter/getAllLastHour", {
+        fetch("https://raf-alpha.vercel.app/newsletter/getAllLastHour", {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        fetch("http://localhost:8080/interested/getAllLastOneHour", {
+        fetch("https://raf-alpha.vercel.app/interested/getAllLastOneHour", {
           headers: { Authorization: `Bearer ${token}` }
         }),
-        fetch("http://localhost:8080/consultation/getAllLastOneHour", {
+        fetch("https://raf-alpha.vercel.app/consultation/getAllLastOneHour", {
           headers: { Authorization: `Bearer ${token}` }
         })
       ])

@@ -704,7 +704,7 @@ export default function EditUnit() {
   useEffect(() => {
     const fetchUnitData = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/unit/getunit/${params.id}`, {
+        const response = await fetch(`https://raf-alpha.vercel.app/unit/getunit/${params.id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -753,7 +753,7 @@ export default function EditUnit() {
       formData.append('data', JSON.stringify(payload))
       state.images.forEach(file => formData.append('images', file))
 
-      const response = await fetch(`http://localhost:8080/unit/updateunit/${params.id}`, {
+      const response = await fetch(`https://raf-alpha.vercel.app/unit/updateunit/${params.id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

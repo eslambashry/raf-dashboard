@@ -44,7 +44,7 @@ export default function Blog() {
 
   const fetchBlogPosts = async () => {
     try {
-      const response = await fetch('http://localhost:8080/blog/?page=1&size=6', {
+      const response = await fetch('https://raf-alpha.vercel.app/blog/?page=1&size=6', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -74,7 +74,7 @@ export default function Blog() {
   const confirmDelete = async () => {
     if (postToDelete) {
       try {
-        const response = await fetch(`http://localhost:8080/blog/delete/${postToDelete}`, {
+        const response = await fetch(`https://raf-alpha.vercel.app/blog/delete/${postToDelete}`, {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`

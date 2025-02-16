@@ -261,7 +261,7 @@ export default function AddCategory() {
         formData.append('image', data.Image)
       }
 
-      const response = await fetch("http://localhost:8080/category/create", {
+      const response = await fetch("https://raf-alpha.vercel.app/category/create", {
         method: "POST",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         body: formData

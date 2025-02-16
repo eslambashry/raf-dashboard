@@ -423,7 +423,7 @@ export default function AddUnit() {
       formData.append('data', JSON.stringify({ ...data, categoryId: params.categoryId }))
       state.images.forEach(file => formData.append('images', file))
 
-      const response = await fetch("http://localhost:8080/unit/addunit", {
+      const response = await fetch("https://raf-alpha.vercel.app/unit/addunit", {
         method: "POST",
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         body: formData
